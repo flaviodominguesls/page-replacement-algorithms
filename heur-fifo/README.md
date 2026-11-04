@@ -54,7 +54,10 @@ Na primeira versão da minha implementação, eu havia esquecido de realizar a c
 
 2. **Falta de Verificação sobre "Clones"**:
 Ao adicionar programas que já estavam usando a memória, meu fluxo de código ignorava esse fator e seguia remanejando o espaço de uso (como resultado, ele removia um programa e adicionava o mesmo programa logo em seguida, causando um Miss importuno)...
- 
+
+3. **Capacidade da Fila igual a Zero**
+Em python, quando a capacidade de uma Queue (maxsize) é igual ou menor a 0, a estrutura de dados passa a não ter limite de tamanho, se comportando como uma fila infinita. No contexto de espaço de memória na disciplina de Sistemas Operacionais, é inadequado que esses valores sejam válidos para as operações de inserção e substituição na memória, ainda mais para o acesso no pior caso, que é O(N), uma vez que podemos adicionar infinitas páginas (porém já sabemos que NÃO existe memória infinita!!).
+
 ## Execução
 
 Como resultado, você pode testar esse algoritmo seguindo os passos abaixo:
