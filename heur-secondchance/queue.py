@@ -1,30 +1,30 @@
 class Queue:
-	
-	def __init__(self, length):	
-		self.length = length
-		self.items = []
-		
-	def is_empty(self):
-		return len(self.items) == 0
-		
-	def is_full(self):
-		return len(self.items) == self.length
+    
+    def __init__(self, length):    
+        self.length = length
+        self.items = []
+        
+    def is_empty(self):
+        return len(self.items) == 0
+        
+    def is_full(self):
+        return len(self.items) == self.length
 
-	def enqueue(self, pagina):
-		self.items.append(pagina)
+    def enqueue(self, pagina):
+        self.items.append(pagina)
 
-	def dequeue(self):
-		if self.is_empty():
-			raise IndexError("PROIBIDO DESENFILERAR: não há como remover algo de uma fila vazia")
-		return self.items.pop(0)
+    def dequeue(self):
+        if self.is_empty():
+            raise IndexError("PROIBIDO DESENFILERAR: não há como remover algo de uma fila vazia")
+        return self.items.pop(0)
 
-	def head(self):
-		if self.is_empty():
-			raise IndexError("SEM CABECA: não existe head em fila vazia")
-		return self.items[0]
+    def head(self):
+        if self.is_empty():
+            raise IndexError("SEM CABECA: não existe head em fila vazia")
+        return self.items[0]
 
-	def size(self):
-		return len(self.items)
+    def size(self):
+        return len(self.items)
     
     # Metodo Novo: buscar uma página pelo número
     def search(self, num):
@@ -33,5 +33,5 @@ class Queue:
                 return page
         return None
 
-	def __str__(self):
-		return f'Fila Atual: {list(self.items)}'
+    def __str__(self):
+        return f'{list(self.items)}'

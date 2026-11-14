@@ -29,14 +29,14 @@ class SecondChance:
         while True:
             candidata = self.memoria.dequeue()
 
-            if candidata.bit_r == 1:
-                candidata.bit_r = 0
+            if candidata.ref_bit == 1:
+                candidata.ref_bit = 0
                 self.memoria.enqueue(candidata)
             else:
                 return candidata
 
     def evolucao(self):
-        print("Digite o número da página a referenciar (ou 'sair' para encerrar).")
+        print("Digite o nome da página a referenciar.")
         print(f"Fila: {self.memoria}\n")
 
         while True:
@@ -50,7 +50,7 @@ class SecondChance:
             elif removida is None:
                 print(f"  MISS --> a página [{novaPag}] acabou de ser carregada na memória")
             else:
-                print(f"  MISS --> página [{removida.numero}] removida, "
+                print(f"  MISS --> página [{removida.number}] removida, "
                       f"página [{novaPag}] foi carregada")
 
             print(f"  Fila: {self.memoria}\n")
