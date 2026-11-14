@@ -15,12 +15,12 @@ class Queue:
 
 	def dequeue(self):
 		if self.is_empty():
-			return IndexError("PROIBIDO DESENFILERAR: não há como remover algo de uma fila vazia")
+			raise IndexError("PROIBIDO DESENFILERAR: não há como remover algo de uma fila vazia")
 		return self.items.pop(0)
 
 	def head(self):
 		if self.is_empty():
-			return IndexError("SEM CABECA: não existe head em fila vazia")
+			raise IndexError("SEM CABECA: não existe head em fila vazia")
 		return self.items[0]
 
 	def size(self):
